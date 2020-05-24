@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import PostEditorStyle from "./PostEditor.module.scss";
 import { MentionsInput, Mention } from "react-mentions";
 import mentionStyle from "./mentionStyle";
+
+// svg
 import thanks from "../../assets/thanks.svg";
 import congrats from "../../assets/congrats.svg";
 import teamplay from "../../assets/teamplay.svg";
 import positive from "../../assets/positive.svg";
 import coworker from "../../assets/coworker.svg";
 import outboundaries from "../../assets/outboundaries.svg";
+import hands from "../../assets/hands.svg";
+import close from "../../assets/close.svg";
 
 class PostEditor extends Component {
   constructor(props) {
@@ -34,6 +40,11 @@ class PostEditor extends Component {
     return (
       <div>
         <div className={PostEditorStyle.header}>
+          <img className={PostEditorStyle.icon} src={hands} alt="Kudos icon" />
+          <Link className={PostEditorStyle.close} to="/">
+            <img src={close} alt="close" />
+          </Link>
+
           <h2>utwórz kudos</h2>
         </div>
         <form onSubmit={this.handleSubmit} noValidate>
