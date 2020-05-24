@@ -23,12 +23,9 @@ class PostEditor extends Component {
     e.preventDefault();
   }
 
-  handleChange = (e) => {
-    const name = e.target.name;
-    console.log(e.target);
-
+  handleRadioChange = (e) => {
     this.setState({
-      [name]: e.target.id,
+      kudosElement: e.target.value,
     });
   };
 
@@ -48,7 +45,6 @@ class PostEditor extends Component {
               maxLength={200}
               style={mentionStyle}
               placeholder="Wpisz treść podziękowań ..."
-              name="post"
             >
               <Mention
                 trigger="@"
@@ -91,7 +87,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="thanks"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Dziękuję Ci"
               />
               <label htmlFor="thanks">
                 <div className={PostEditorStyle.kudosListText}>
@@ -107,7 +104,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="congrats"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Gratulacje"
               />
               <label htmlFor="congrats">
                 <div className={PostEditorStyle.kudosListText}>
@@ -123,7 +121,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="teamplay"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Gracz zespołowy"
               />
               <label htmlFor="teamplay">
                 <div className={PostEditorStyle.kudosListText}>
@@ -139,7 +138,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="positive"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Pozytywny wpływ"
               />
               <label htmlFor="positive">
                 <div className={PostEditorStyle.kudosListText}>
@@ -155,7 +155,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="coworker"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Świetny współpracownik"
               />
               <label htmlFor="coworker">
                 <div className={PostEditorStyle.kudosListText}>
@@ -171,7 +172,8 @@ class PostEditor extends Component {
                 type="radio"
                 name="kudosElement"
                 id="outboundaries"
-                onChange={this.handleChange}
+                onChange={this.handleRadioChange}
+                value="Przechodzisz samego (samą) siebie"
               />
               <label htmlFor="outboundaries">
                 <div className={PostEditorStyle.kudosListText}>
