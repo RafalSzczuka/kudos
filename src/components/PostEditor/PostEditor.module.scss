@@ -32,7 +32,12 @@
     width: 24px;
     height: 24px;
     border-radius: 6px;
+    transition: 0.3s;
     cursor: pointer;
+
+    &:hover {
+      background-color: #dddddd;
+    }
 
     img {
       position: absolute;
@@ -45,6 +50,9 @@
 }
 
 .publishBtn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
   display: block;
   height: 32px;
   width: 120px;
@@ -61,4 +69,16 @@
 .publishBtn:hover {
   background-color: #ae3cb4;
   box-shadow: 0 0 4px rgb(165, 165, 165);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.customSelect {
+  width: 183px;
+  height: 32px;
+  margin-top: 8px;
+  border-radius: 6px;
 }

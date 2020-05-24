@@ -17,6 +17,7 @@ class PostEditor extends Component {
       post: "",
       mention: "",
       kudosElement: "",
+      group: "",
     };
   }
 
@@ -27,6 +28,12 @@ class PostEditor extends Component {
   handleRadioChange = (e) => {
     this.setState({
       kudosElement: e.target.value,
+    });
+  };
+
+  handleGroupChange = (e) => {
+    this.setState({
+      group: e.target.value,
     });
   };
 
@@ -86,6 +93,20 @@ class PostEditor extends Component {
             </MentionsInput>
           </label>
           <KudosList onChange={this.handleRadioChange} />
+
+          <label htmlFor="group" className={PostEditorStyle.group}>
+            Wybierz grupę
+            <select
+              className={PostEditorStyle.customSelect}
+              name="group"
+              onChange={this.handleGroupChange}
+            >
+              <option value="">wybierz grupę</option>
+              <option value="Białystok">Białystok</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Backend">Backend</option>
+            </select>
+          </label>
         </form>
         <button className={PostEditorStyle.publishBtn}>Opublikuj</button>
       </div>
