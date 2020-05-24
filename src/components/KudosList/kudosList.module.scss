@@ -1,0 +1,53 @@
+input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+.kudosList {
+  margin-top: 24px;
+
+  label {
+    position: relative;
+    width: 500px;
+    height: 80px;
+    border: 1px solid #eeeeee;
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  .kudosListText {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
+      margin: 0;
+    }
+
+    p:first-of-type {
+      font-weight: 400;
+      margin-bottom: 2px;
+    }
+  }
+
+  .kudosListImg {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+
+    img {
+      width: 70px;
+      height: auto;
+    }
+  }
+}
+
+input[type="radio"]:checked + label {
+  background-color: #eeeeee;
+  border: 1px solid #a8996f;
+}

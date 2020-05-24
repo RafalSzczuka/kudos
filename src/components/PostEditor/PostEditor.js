@@ -5,13 +5,8 @@ import PostEditorStyle from "./PostEditor.module.scss";
 import { MentionsInput, Mention } from "react-mentions";
 import mentionStyle from "./mentionStyle";
 
-// svg
-import thanks from "../../assets/thanks.svg";
-import congrats from "../../assets/congrats.svg";
-import teamplay from "../../assets/teamplay.svg";
-import positive from "../../assets/positive.svg";
-import coworker from "../../assets/coworker.svg";
-import outboundaries from "../../assets/outboundaries.svg";
+import KudosList from "../KudosList/KudosList";
+
 import hands from "../../assets/hands.svg";
 import close from "../../assets/close.svg";
 
@@ -36,7 +31,6 @@ class PostEditor extends Component {
   };
 
   render() {
-    console.log(this.state.post);
     return (
       <div>
         <div className={PostEditorStyle.header}>
@@ -91,112 +85,7 @@ class PostEditor extends Component {
               />
             </MentionsInput>
           </label>
-          <label htmlFor="kudos">
-            Wybierz kudos
-            <div className={PostEditorStyle.kudosList}>
-              <input
-                type="radio"
-                name="kudosElement"
-                id="thanks"
-                onChange={this.handleRadioChange}
-                value="Dziękuję Ci"
-              />
-              <label htmlFor="thanks">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Dziękuję Ci</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={thanks} alt="Thank you" />
-                </div>
-              </label>
-
-              <input
-                type="radio"
-                name="kudosElement"
-                id="congrats"
-                onChange={this.handleRadioChange}
-                value="Gratulacje"
-              />
-              <label htmlFor="congrats">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Gratulacje</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={congrats} alt="Congratulations" />
-                </div>
-              </label>
-
-              <input
-                type="radio"
-                name="kudosElement"
-                id="teamplay"
-                onChange={this.handleRadioChange}
-                value="Gracz zespołowy"
-              />
-              <label htmlFor="teamplay">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Gracz zespołowy</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={teamplay} alt="Teamplay" />
-                </div>
-              </label>
-
-              <input
-                type="radio"
-                name="kudosElement"
-                id="positive"
-                onChange={this.handleRadioChange}
-                value="Pozytywny wpływ"
-              />
-              <label htmlFor="positive">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Pozytywny wpływ</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={positive} alt="Positive" />
-                </div>
-              </label>
-
-              <input
-                type="radio"
-                name="kudosElement"
-                id="coworker"
-                onChange={this.handleRadioChange}
-                value="Świetny współpracownik"
-              />
-              <label htmlFor="coworker">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Świetny współpracownik</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={coworker} alt="coworker" />
-                </div>
-              </label>
-
-              <input
-                type="radio"
-                name="kudosElement"
-                id="outboundaries"
-                onChange={this.handleRadioChange}
-                value="Przechodzisz samego (samą) siebie"
-              />
-              <label htmlFor="outboundaries">
-                <div className={PostEditorStyle.kudosListText}>
-                  <p>Przechodzisz samego (samą) siebie</p>
-                  <p>Imię i nazwisko</p>
-                </div>
-                <div className={PostEditorStyle.kudosListImg}>
-                  <img src={outboundaries} alt="outboundaries" />
-                </div>
-              </label>
-            </div>
-          </label>
+          <KudosList onChange={this.handleRadioChange} />
         </form>
         <button className={PostEditorStyle.publishBtn}>Opublikuj</button>
       </div>
