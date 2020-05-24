@@ -15,6 +15,9 @@ input[type="radio"] {
     margin-bottom: 16px;
     transition: 0.4s;
     cursor: pointer;
+    &:hover {
+      background-color: #eeeeee;
+    }
   }
 
   .kudosListText {

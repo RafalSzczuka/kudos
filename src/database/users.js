@@ -26,7 +26,7 @@ const users = [
   },
   {
     id: 6,
-    display: "Augustyna Zdunowska",
+    display: "Anna Korolczuk",
     avatar: "https://randomuser.me/api/portraits/women/91.jpg",
   },
 ];

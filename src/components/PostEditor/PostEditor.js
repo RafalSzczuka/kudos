@@ -18,12 +18,25 @@ class PostEditor extends Component {
       mention: "",
       kudosElement: "",
       group: "",
+      timestamp: "",
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
   }
+
+  handlePublish = () => {
+    const time = new Date();
+
+    this.setState((prevState) => {
+      return {
+        timestamp: (prevState.timestamp = time),
+      };
+    });
+
+    console.log(this.state);
+  };
 
   handleRadioChange = (e) => {
     this.setState({
@@ -39,7 +52,7 @@ class PostEditor extends Component {
 
   render() {
     return (
-      <div>
+      <div className={PostEditorStyle.container}>
         <div className={PostEditorStyle.header}>
           <img className={PostEditorStyle.icon} src={hands} alt="Kudos icon" />
           <Link className={PostEditorStyle.close} to="/">
@@ -108,7 +121,12 @@ class PostEditor extends Component {
             </select>
           </label>
         </form>
-        <button className={PostEditorStyle.publishBtn}>Opublikuj</button>
+        <button
+          className={PostEditorStyle.publishBtn}
+          onClick={this.handlePublish}
+        >
+          Opublikuj
+        </button>
       </div>
     );
   }

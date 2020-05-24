@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 564px;
+  margin: 50px auto;
+  margin-bottom: 80px;
+}
+
+.editButton {
+  position: relative;
+  width: 100%;
+  height: 56px;
+
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #eeeeee;
+    border: 1px solid #a8996f;
+
+    img {
+      border-color: #96459a5e;
+    }
+  }
+
+  img {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 16px;
+    height: 44px;
+    width: 44px;
+    transform: translateY(-50%);
+    border: 2px solid transparent;
+    transition: 0.3s;
+  }
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 64px;
+    transform: translateY(-50%);
+    color: #707070;
+    font-weight: 400;
+  }
+}

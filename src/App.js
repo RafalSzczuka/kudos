@@ -7,15 +7,13 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
-    <div className="container">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/edit" component={PostEditorPage} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/edit" component={PostEditorPage} />
+        <Route component={ErrorPage} />
+      </Switch>
+    </Router>
   );
 }
 
