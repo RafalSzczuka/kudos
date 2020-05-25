@@ -1,8 +1,18 @@
 import React from "react";
 import Post from "../Post/Post";
-import posts from "../../database/posts";
+import initialialPosts from "../../database/posts";
 
-const list = posts.map((post) => (
+let posts;
+
+if (!localStorage.getItem("posts")) {
+  posts = initialialPosts;
+  localStorage.setItem("posts", JSON.stringify(posts));
+} else {
+  var rawData = localStorage.getItem("posts");
+  posts = JSON.parse(rawData);
+}
+
+const list = posts.map((post, index) => (
   <Post
     img={post.img}
     user={post.user}
@@ -13,7 +23,7 @@ const list = posts.map((post) => (
     mention={post.mention}
     group={post.group}
     likes={post.likes}
-    key={post.user}
+    key={index}
   />
 ));
 
