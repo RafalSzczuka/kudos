@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PostEditorStyle from "./PostEditor.module.scss";
-import { MentionsInput, Mention } from "react-mentions";
-import mentionStyle from "./mentionStyle";
 import KudosList from "../KudosList/KudosList";
 import PublishBtn from "../PublishBtn/PublishBtn";
 import hands from "../../assets/hands.svg";
 import close from "../../assets/close.svg";
 import users from "../../database/users";
+
+import TextArea from "./MentionInputs/TextArea/TextArea";
+import LineInput from "./MentionInputs/LineInput/LineInput";
 
 const activeUser = users.filter((user) => user.active)[0];
 
@@ -26,14 +27,14 @@ class PostEditor extends Component {
       group: "",
       likes: 0,
 
-      valid: false,
+      valid: true,
     };
   }
 
   handleSubmit = () => {
     if (this.state.valid) {
       this.addPost();
-      window.location.reload();
+      // window.location.reload();
     }
   };
 
@@ -76,6 +77,12 @@ class PostEditor extends Component {
     });
   };
 
+  handleMentionChange = (e) => {
+    this.setState({
+      mention: e.target.value,
+    });
+  };
+
   render() {
     return (
       <div className={PostEditorStyle.container}>
@@ -84,54 +91,14 @@ class PostEditor extends Component {
           <Link className={PostEditorStyle.close} to="/">
             <img src={close} alt="close" />
           </Link>
-
           <h2>utwórz kudos</h2>
         </div>
         <form noValidate>
-          <label htmlFor="post">
-            Treść posta nad kudosem
-            <MentionsInput
-              value={this.state.post}
-              onChange={this.handlePostChange}
-              maxLength={200}
-              style={mentionStyle}
-              placeholder="Wpisz treść podziękowań ..."
-            >
-              <Mention
-                trigger="@"
-                data={this.props.users}
-                style={{
-                  backgroundColor: "#daf4fa",
-                }}
-                markup="<span>@__display__</span>"
-                displayTransform={(id, display) => `@${display}`}
-                appendSpaceOnAdd={true}
-              />
-            </MentionsInput>
-          </label>
-          <label htmlFor="mention">
-            Wybierz osobę, której przyznajesz kudos
-            <MentionsInput
-              value={this.state.mention}
-              onChange={(event) =>
-                this.setState({ mention: event.target.value })
-              }
-              maxLength={60}
-              style={mentionStyle}
-              placeholder="Wpisz imię i nazwisko lub wybierz '@' osobę ..."
-              singleLine={true}
-            >
-              <Mention
-                trigger="@"
-                data={this.props.users}
-                style={{
-                  backgroundColor: "#daf4fa",
-                }}
-                displayTransform={(id, display) => ` ${display}`}
-                markup="__display__ "
-              />
-            </MentionsInput>
-          </label>
+          <TextArea post={this.state.post} postChange={this.handlePostChange} />
+          <LineInput
+            mention={this.state.mention}
+            mentionChange={this.handleMentionChange}
+          />
           <KudosList onChange={this.handleRadioChange} />
           <label htmlFor="group" className={PostEditorStyle.group}>
             Wybierz grupę

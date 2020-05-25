@@ -1,5 +1,5 @@
 import React from "react";
-import KudosListElement from "../KudosListElement/KudosListElement";
+import KudosListElement from "./KudosListElement/KudosListElement";
 import kudosListStyle from "./kudosList.module.scss";
 import data from "../../database/kudosElements";
 
