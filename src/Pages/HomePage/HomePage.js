@@ -1,13 +1,13 @@
 import React from "react";
 import homePageStyles from "./HomePage.module.scss";
 import PostEditorBtn from "../../components/PostEditorBtn/PostEditorBtn";
-import Post from "../../components/Post/Post";
+import PostList from "../../components/PostList/PostList";
 
 const HomePage = () => {
   return (
     <div className={homePageStyles.container}>
       <PostEditorBtn />
-      <Post />
+      <PostList />
     </div>
   );
 };

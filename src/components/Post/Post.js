@@ -1,43 +1,50 @@
 import React, { useState } from "react";
 import postStyle from "./post.module.scss";
-import posts from "../../database/posts";
 import Moment from "react-moment";
 import "moment/locale/pl";
 import users from "../../database/users";
 
 const activeUser = users.filter((user) => user.active)[0];
 
-const post = posts[0];
-
 function createMarkup(txt) {
   return { __html: txt };
 }
 
-const Post = () => {
+const Post = ({
+  img,
+  user,
+  timestamp,
+  txt,
+  kudos,
+  kudosImg,
+  kudosTxt,
+  mention,
+  group,
+}) => {
   let [counter, setCounter] = useState(0);
 
   return (
     <div className={postStyle.post}>
       <div className={postStyle.header}>
-        <img src={post.img} alt={post.user}></img>
-        <h3>{post.user}</h3>
+        <img src={img} alt={user}></img>
+        <h3>{user}</h3>
         <p>
           <Moment locale="pl" fromNow>
-            {post.timestamp}
+            {timestamp}
           </Moment>
         </p>
       </div>
       <div
         className={postStyle.txt}
-        dangerouslySetInnerHTML={createMarkup(post.txt)}
+        dangerouslySetInnerHTML={createMarkup(txt)}
       ></div>
       <div className={postStyle.kudos}>
         <div className={postStyle.kudosImg}>
-          <img src={post.kudosImg} alt={post.kudos} />
+          <img src={kudosImg} alt={kudos} />
         </div>
         <div className={postStyle.kudosTxt}>
-          <p>{post.kudos}</p>
-          <h2>{post.mention}</h2>
+          <p>{kudos}</p>
+          <h2>{mention}</h2>
         </div>
       </div>
       <div className={postStyle.footer}>
@@ -45,7 +52,7 @@ const Post = () => {
           <div className={postStyle.groupIcon}>
             <i className="fas fa-city"></i>
           </div>
-          <span>{post.group}</span>
+          <span>{group}</span>
         </div>
         <div className={postStyle.options}>
           <i className="fas fa-heart" onClick={() => setCounter(++counter)}></i>
