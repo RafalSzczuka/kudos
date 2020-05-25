@@ -1,46 +1,66 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import PostEditorStyle from "./PostEditor.module.scss";
 import { MentionsInput, Mention } from "react-mentions";
 import mentionStyle from "./mentionStyle";
-
 import KudosList from "../KudosList/KudosList";
-
+import PublishBtn from "../PublishBtn/PublishBtn";
 import hands from "../../assets/hands.svg";
 import close from "../../assets/close.svg";
+import users from "../../database/users";
+
+const activeUser = users.filter((user) => user.active)[0];
 
 class PostEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: {
+        name: activeUser.display,
+        img: activeUser.avatar,
+      },
       post: "",
       mention: "",
-      kudosElement: "",
+      kudosTitle: "",
+      kudosImg: "",
       group: "",
-      timestamp: "",
+      likes: 0,
+
+      valid: false,
     };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
+  handleSubmit = () => {
+    if (this.state.valid) {
+      this.addPost();
+      window.location.reload();
+    }
+  };
 
-  handlePublish = () => {
-    const time = new Date();
+  addPost = () => {
+    let newPost = {
+      user: this.state.user.name,
+      img: this.state.user.img,
+      timestamp: new Date(),
+      txt: this.state.post,
+      kudos: this.state.kudosTitle,
+      kudosImg: this.state.kudosImg,
+      mention: this.state.mention,
+      group: this.state.group,
+      likes: this.state.likes,
+    };
 
-    this.setState((prevState) => {
-      return {
-        timestamp: (prevState.timestamp = time),
-      };
-    });
-
-    console.log(this.state);
+    let storagePosts = JSON.parse(localStorage.getItem("posts"));
+    storagePosts.unshift(newPost);
+    localStorage.setItem("posts", JSON.stringify(storagePosts));
   };
 
   handleRadioChange = (e) => {
+    let img = e.target.attributes.getNamedItem("data-img").value;
+
     this.setState({
-      kudosElement: e.target.value,
+      kudosTitle: e.target.value,
+      kudosImg: img,
     });
   };
 
@@ -67,7 +87,7 @@ class PostEditor extends Component {
 
           <h2>utwórz kudos</h2>
         </div>
-        <form onSubmit={this.handleSubmit} noValidate>
+        <form noValidate>
           <label htmlFor="post">
             Treść posta nad kudosem
             <MentionsInput
@@ -107,12 +127,12 @@ class PostEditor extends Component {
                 style={{
                   backgroundColor: "#daf4fa",
                 }}
-                markup="@[__display__]"
+                displayTransform={(id, display) => ` ${display}`}
+                markup="__display__ "
               />
             </MentionsInput>
           </label>
           <KudosList onChange={this.handleRadioChange} />
-
           <label htmlFor="group" className={PostEditorStyle.group}>
             Wybierz grupę
             <select
@@ -127,12 +147,7 @@ class PostEditor extends Component {
             </select>
           </label>
         </form>
-        <button
-          className={PostEditorStyle.publishBtn}
-          onClick={this.handlePublish}
-        >
-          Opublikuj
-        </button>
+        <PublishBtn valid={this.state.valid} handler={this.handleSubmit} />
       </div>
     );
   }
