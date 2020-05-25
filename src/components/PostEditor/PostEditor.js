@@ -50,6 +50,12 @@ class PostEditor extends Component {
     });
   };
 
+  handlePostChange = (e) => {
+    this.setState({
+      post: e.target.value,
+    });
+  };
+
   render() {
     return (
       <div className={PostEditorStyle.container}>
@@ -66,7 +72,7 @@ class PostEditor extends Component {
             Treść posta nad kudosem
             <MentionsInput
               value={this.state.post}
-              onChange={(event) => this.setState({ post: event.target.value })}
+              onChange={this.handlePostChange}
               maxLength={200}
               style={mentionStyle}
               placeholder="Wpisz treść podziękowań ..."
@@ -77,7 +83,7 @@ class PostEditor extends Component {
                 style={{
                   backgroundColor: "#daf4fa",
                 }}
-                markup="@[__display__]"
+                markup="<span>@__display__</span>"
                 displayTransform={(id, display) => `@${display}`}
                 appendSpaceOnAdd={true}
               />

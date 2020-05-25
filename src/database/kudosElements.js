@@ -1,20 +1,19 @@
-import thanks from "../assets/thanks.svg";
-import congrats from "../assets/congrats.svg";
-import teamplay from "../assets/teamplay.svg";
-import positive from "../assets/positive.svg";
-import coworker from "../assets/coworker.svg";
-import outboundaries from "../assets/outboundaries.svg";
+import { images } from "../database/images";
 
 const data = [
-  { id: "thanks", value: "Dziękuję Ci", img: thanks },
-  { id: "congrats", value: "Gratulacje", img: congrats },
-  { id: "teamplay", value: "Gracz zespołowy", img: teamplay },
-  { id: "positive", value: "Pozytywny wpływ", img: positive },
-  { id: "coworker", value: "Świetny współpracownik", img: coworker },
+  {
+    id: "thanks",
+    value: "Dziękuję Ci",
+    img: images.thanks,
+  },
+  { id: "congrats", value: "Gratulacje", img: images.congrats },
+  { id: "teamplay", value: "Gracz zespołowy", img: images.teamplay },
+  { id: "positive", value: "Pozytywny wpływ", img: images.positive },
+  { id: "coworker", value: "Świetny współpracownik", img: images.coworker },
   {
     id: "outboundaries",
     value: "Przechodzisz samego (samą) siebie",
-    img: outboundaries,
+    img: images.outboundaries,
   },
 ];
 

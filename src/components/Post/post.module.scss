@@ -1,0 +1,164 @@
+.post {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  margin-top: 13px;
+  padding: 16px;
+  overflow: hidden;
+
+  span {
+    color: #a8996f;
+  }
+
+  .header {
+    position: relative;
+    height: 40px;
+
+    img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+    h3 {
+      position: absolute;
+      top: 0;
+      left: 46px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #333333;
+    }
+
+    p {
+      position: absolute;
+      line-height: 1;
+      margin: 0;
+      bottom: 0;
+      left: 46px;
+      font-weight: 400;
+      color: #707070;
+    }
+  }
+}
+
+.txt {
+  margin-top: 38px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.kudos {
+  display: flex;
+  align-items: center;
+  height: 193px;
+  padding: 29px;
+  border: 1px solid #eeeeeea6;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.kudosImg {
+  img {
+    width: 125px;
+    height: auto;
+  }
+}
+
+.kudosTxt {
+  flex-grow: 1;
+
+  text-align: center;
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+
+  ~ hr {
+    margin: 0;
+    border-top: 1px solid #eeeeeea6;
+    display: inline-block;
+    width: 570px;
+    transform: translateX(-20px);
+  }
+
+  .group {
+    color: #a8996f;
+    display: flex;
+    align-items: flex-start;
+
+    .groupIcon {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      background-color: #eeeeee;
+      border-radius: 6px;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+      }
+    }
+  }
+
+  .options {
+    i {
+      color: #eeeeee;
+      margin-right: 5px;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    :nth-child(5) {
+      color: #a8996f;
+      margin-left: 24px;
+      cursor: pointer;
+    }
+    :nth-child(1) {
+      cursor: pointer;
+
+      &:hover {
+        color: #e27272;
+      }
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}
+
+.addComment {
+  margin-top: 15px;
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  input {
+    width: 484px;
+    height: 32px;
+    margin-left: 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding-left: 8px;
+  }
+}
