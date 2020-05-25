@@ -1,6 +1,5 @@
 import React from "react";
 import PostEditor from "../../components/PostEditor/PostEditor";
-import users from "../../database/users";
 import { motion } from "framer-motion";
 import {
   pageVariants,
@@ -16,7 +15,7 @@ const PostEditorPage = () => {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <PostEditor users={users} />
+      <PostEditor />
     </motion.div>
   );
 };
