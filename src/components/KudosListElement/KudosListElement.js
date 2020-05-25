@@ -9,6 +9,7 @@ const KudosListElement = ({ id, onChange, value, img, style }) => {
         id={id}
         onChange={onChange}
         value={value}
+        data-img={img}
       />
       <label htmlFor={id}>
         <div className={style.kudosListText}>
