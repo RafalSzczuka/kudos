@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import homePageStyles from "./HomePage.module.scss";
 import PostEditorBtn from "../../components/PostEditorBtn/PostEditorBtn";
 import PostList from "../../components/PostList/PostList";
@@ -10,6 +10,10 @@ import {
 } from "../../pageTransition/pageTransition";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.div
       className={homePageStyles.container}

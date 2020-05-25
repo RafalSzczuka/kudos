@@ -34,7 +34,6 @@ class PostEditor extends Component {
   handleSubmit = () => {
     if (this.state.valid) {
       this.addPost();
-      // window.location.reload();
     }
   };
 
