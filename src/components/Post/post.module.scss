@@ -82,6 +82,8 @@
 }
 
 .footer {
+  user-select: none;
+
   display: flex;
   justify-content: space-between;
   height: 25px;
@@ -119,29 +121,63 @@
   }
 
   .options {
+    position: relative;
     i {
       color: #eeeeee;
       margin-right: 5px;
       margin-left: 10px;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     :nth-child(5) {
       color: #a8996f;
       margin-left: 24px;
-      cursor: pointer;
+
+      &:hover {
+        color: #c3a85b;
+
+        &:active {
+          transform: scale(1.5);
+          color: black;
+        }
+      }
     }
+
     :nth-child(1) {
-      cursor: pointer;
+      position: absolute;
+      top: 2px;
+      left: -50px;
 
       &:hover {
         color: #e27272;
+
+        &:active {
+          transform: scale(1.5);
+          color: red;
+        }
       }
     }
 
     span {
       font-size: 12px;
       font-weight: 400;
+    }
+    :nth-child(2) {
+      position: absolute;
+      top: 2px;
+      left: -18px;
+    }
+
+    :nth-child(3) {
+      &:hover {
+        color: #a8996f;
+
+        &:active {
+          transform: scale(1.5);
+          color: #c3a85b;
+        }
+      }
     }
   }
 }

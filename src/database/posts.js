@@ -11,6 +11,7 @@ var posts = [
     kudosImg: images.coworker,
     mention: "Barbara Klimowicz",
     group: "Marketing",
+    likes: 4,
   },
   {
     user: "Albert Dziedzic",
@@ -22,6 +23,7 @@ var posts = [
     kudosImg: images.positive,
     mention: "Norbert Janowski",
     group: "Białystok",
+    likes: 2,
   },
 ];
 

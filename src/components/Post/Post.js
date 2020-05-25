@@ -20,6 +20,7 @@ const Post = ({
   kudosTxt,
   mention,
   group,
+  likes,
 }) => {
   let [counter, setCounter] = useState(0);
 
@@ -56,7 +57,7 @@ const Post = ({
         </div>
         <div className={postStyle.options}>
           <i className="fas fa-heart" onClick={() => setCounter(++counter)}></i>
-          <span>{counter}</span>
+          <span>{(likes += counter)}</span>
           <i className="fas fa-comment-alt"></i>
           <span>0</span>
           <i className="fas fa-ellipsis-v"></i>

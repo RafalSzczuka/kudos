@@ -12,6 +12,7 @@ const list = posts.map((post) => (
     kudosImg={post.kudosImg}
     mention={post.mention}
     group={post.group}
+    likes={post.likes}
     key={post.user}
   />
 ));
