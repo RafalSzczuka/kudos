@@ -1,0 +1,28 @@
+.publishBtn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  display: block;
+  height: 32px;
+  width: 120px;
+  border: none;
+  border-radius: 6px;
+
+  background-color: #96459a;
+  color: #ffffff;
+  font-weight: 600;
+
+  transition: 0.4s;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 32px;
+  }
+}
+
+.publishBtn:hover {
+  background-color: #ae3cb4;
+  box-shadow: 0 0 4px rgb(165, 165, 165);
+}
