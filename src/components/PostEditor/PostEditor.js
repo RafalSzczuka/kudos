@@ -27,6 +27,7 @@ class PostEditor extends Component {
       group: "",
       likes: 0,
 
+      parsedPost: "",
       valid: true,
     };
   }
@@ -69,6 +70,16 @@ class PostEditor extends Component {
     return result.join("");
   };
 
+  spanParser = (data) => {
+    let first = data.split("</span>");
+    first = first.join("");
+
+    let string = first.split("<span>");
+    string = string.join("");
+
+    return string;
+  };
+
   handleRadioChange = (e) => {
     let img = e.target.attributes.getNamedItem("data-img").value;
 
@@ -87,6 +98,7 @@ class PostEditor extends Component {
   handlePostChange = (e) => {
     this.setState({
       post: e.target.value,
+      parsedPost: this.spanParser(e.target.value),
     });
   };
 
@@ -108,6 +120,9 @@ class PostEditor extends Component {
         </div>
         <form noValidate>
           <TextArea post={this.state.post} postChange={this.handlePostChange} />
+          <span className={PostEditorStyle.counter}>
+            {this.state.parsedPost.length}/200
+          </span>
           <LineInput
             mention={this.state.mention}
             mentionChange={this.handleMentionChange}
