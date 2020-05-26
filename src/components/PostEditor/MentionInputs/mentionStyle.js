@@ -34,7 +34,7 @@ export default {
 
     input: {
       padding: 9,
-      outline: 0,
+      outlineColor: "rgba(115, 205, 225, 0.5)",
       border: "1px solid silver",
       borderRadius: "6px",
     },
@@ -52,7 +52,7 @@ export default {
     input: {
       padding: 9,
       minHeight: 20,
-      outline: 0,
+      outlineColor: "rgba(115, 205, 225, 0.5)",
       border: 0,
     },
   },
