@@ -27,6 +27,19 @@ var initialialPosts = [
     groupIco: "fas fa-city",
     likes: 2,
   },
+  {
+    user: "Florian Zawisza",
+    img: "https://randomuser.me/api/portraits/men/39.jpg",
+    timestamp: "2020-05-23T12:59-0500",
+    txt:
+      "Jestem tu nowy i bez pomocnej dłoni <span>@Albert Dziedzic</span> chyba bym sobie nie poradził 💪 Deadline nas gonił, ale daliśmy radę! Dzięki za pomoc, masz u mnie piwo! 👌",
+    kudos: "Gracz zespołowy",
+    kudosImg: images.teamplay,
+    mention: "Albert Dziedzic",
+    group: "Backend",
+    groupIco: "fas fa-server",
+    likes: 12,
+  },
 ];
 
 export default initialialPosts;
