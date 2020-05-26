@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+
 import PostEditorStyle from "./PostEditor.module.scss";
 import KudosList from "../KudosList/KudosList";
 import PublishBtn from "../PublishBtn/PublishBtn";
@@ -27,13 +29,61 @@ class PostEditor extends Component {
       likes: 0,
 
       parsedPost: "",
-      valid: true,
+
+      valid: false,
+
+      errors: {
+        post: false,
+        mention: false,
+        kudos: false,
+        group: false,
+      },
     };
   }
+  errorMessages = {
+    post: "Wpisz co najmniej 10 znaków",
+    mention: "Wpisz co najmniej 10 znaków",
+    kudos: "Wybierz kudos",
+    group: "Wybierz grupę",
+  };
 
-  handleSubmit = () => {
-    if (this.state.valid) {
+  formValidator = () => {
+    let post = false,
+      mention = false,
+      kudos = false,
+      group = false,
+      correct = false;
+
+    if (this.state.parsedPost.length >= 10) {
+      post = true;
+    }
+    if (this.state.mention.length >= 10) {
+      mention = true;
+    }
+    if (this.state.kudosTitle !== "") {
+      kudos = true;
+    }
+    if (this.state.group !== "") {
+      group = true;
+    }
+    if (post & mention & kudos & group) {
+      correct = true;
+      this.setState({
+        valid: true,
+      });
+    }
+    return { post, mention, kudos, group, correct };
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validation = this.formValidator();
+
+    if (validation.correct) {
       this.addPost();
+
+      setTimeout(() => this.props.history.push("/"), 1200);
     }
   };
 
@@ -90,7 +140,6 @@ class PostEditor extends Component {
   };
 
   handleGroupChange = (e) => {
-    console.log(e);
     this.setState({
       group: e.value,
       groupIco: e.label.props.children[0].props.className,
@@ -125,11 +174,11 @@ class PostEditor extends Component {
           />
           <KudosList onChange={this.handleRadioChange} />
           <SelectGroup onChange={this.handleGroupChange} />
+          <PublishBtn valid={this.state.valid} handler={this.handleSubmit} />
         </form>
-        <PublishBtn valid={this.state.valid} handler={this.handleSubmit} />
       </div>
     );
   }
 }
 
-export default PostEditor;
+export default withRouter(PostEditor);
