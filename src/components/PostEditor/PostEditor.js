@@ -9,6 +9,7 @@ import users from "../../database/users";
 
 import TextArea from "./MentionInputs/TextArea/TextArea";
 import LineInput from "./MentionInputs/LineInput/LineInput";
+import SelectGroup from "./SelectGroup/SelectGroup";
 
 const activeUser = users.filter((user) => user.active)[0];
 
@@ -128,19 +129,7 @@ class PostEditor extends Component {
             mentionChange={this.handleMentionChange}
           />
           <KudosList onChange={this.handleRadioChange} />
-          <label htmlFor="group" className={PostEditorStyle.group}>
-            Wybierz grupę
-            <select
-              className={PostEditorStyle.customSelect}
-              name="group"
-              onChange={this.handleGroupChange}
-            >
-              <option value="">wybierz grupę</option>
-              <option value="Białystok">Białystok</option>
-              <option value="Marketing">Marketing</option>
-              <option value="Backend">Backend</option>
-            </select>
-          </label>
+          <SelectGroup onChange={this.handleGroupChange} />
         </form>
         <PublishBtn valid={this.state.valid} handler={this.handleSubmit} />
       </div>
