@@ -1,0 +1,12 @@
+.validationMessage {
+  span {
+    position: absolute;
+    font-size: 10px;
+    background-color: #fe0606bd;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    min-width: 120px;
+  }
+}

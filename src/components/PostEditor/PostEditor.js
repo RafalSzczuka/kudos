@@ -9,6 +9,7 @@ import TextArea from "./MentionInputs/TextArea/TextArea";
 import LineInput from "./MentionInputs/LineInput/LineInput";
 import SelectGroup from "./SelectGroup/SelectGroup";
 import Header from "./Header/Header";
+import ValidationMessage from "../ValidationMessage/ValidationMessage";
 
 const activeUser = users.filter((user) => user.active)[0];
 
@@ -41,10 +42,10 @@ class PostEditor extends Component {
     };
   }
   errorMessages = {
-    post: "Wpisz co najmniej 10 znaków",
-    mention: "Wpisz co najmniej 10 znaków",
-    kudos: "Wybierz kudos",
-    group: "Wybierz grupę",
+    errorPost: "Wpisz co najmniej 10 znaków",
+    errorMention: "Wpisz co najmniej 10 znaków",
+    errorKudos: "Wybierz kudos",
+    errorGroup: "Wybierz grupę",
   };
 
   formValidator = () => {
@@ -84,6 +85,15 @@ class PostEditor extends Component {
       this.addPost();
 
       setTimeout(() => this.props.history.push("/"), 1200);
+    } else {
+      this.setState({
+        errors: {
+          post: !validation.post,
+          mention: !validation.mention,
+          kudos: !validation.kudos,
+          group: !validation.group,
+        },
+      });
     }
   };
 
@@ -136,6 +146,7 @@ class PostEditor extends Component {
     this.setState({
       kudosTitle: e.target.value,
       kudosImg: img,
+      errors: { ...this.state.errors, kudos: false },
     });
   };
 
@@ -143,23 +154,44 @@ class PostEditor extends Component {
     this.setState({
       group: e.value,
       groupIco: e.label.props.children[0].props.className,
+      errors: { ...this.state.errors, group: false },
     });
   };
 
   handlePostChange = (e) => {
+    let string = this.spanParser(e.target.value);
+    if (string.length >= 10) {
+      this.setState({
+        errors: { ...this.state.errors, post: false },
+      });
+    }
     this.setState({
       post: e.target.value,
-      parsedPost: this.spanParser(e.target.value),
+      parsedPost: string,
     });
   };
 
   handleMentionChange = (e) => {
+    if (e.target.value.length >= 10) {
+      this.setState({
+        errors: { ...this.state.errors, mention: false },
+      });
+    }
+
     this.setState({
       mention: e.target.value,
     });
   };
 
   render() {
+    const {
+      errorPost,
+      errorMention,
+      errorKudos,
+      errorGroup,
+    } = this.errorMessages;
+    const { post, mention, kudos, group } = this.state.errors;
+
     return (
       <div className={PostEditorStyle.container}>
         <Header />
@@ -176,6 +208,32 @@ class PostEditor extends Component {
           <SelectGroup onChange={this.handleGroupChange} />
           <PublishBtn valid={this.state.valid} handler={this.handleSubmit} />
         </form>
+
+        {/* validator messages */}
+        {post ? (
+          <ValidationMessage
+            message={errorPost}
+            position={{ top: "70px", right: "32px" }}
+          />
+        ) : null}
+        {mention ? (
+          <ValidationMessage
+            message={errorMention}
+            position={{ top: "225px", right: "32px" }}
+          />
+        ) : null}
+        {kudos ? (
+          <ValidationMessage
+            message={errorKudos}
+            position={{ top: "332px", right: "32px" }}
+          />
+        ) : null}
+        {group ? (
+          <ValidationMessage
+            message={errorGroup}
+            position={{ bottom: "70px", left: "150px" }}
+          />
+        ) : null}
       </div>
     );
   }
