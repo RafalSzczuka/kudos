@@ -1,0 +1,31 @@
+.addComment {
+  position: relative;
+  margin-top: 15px;
+  .commentAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  input {
+    width: 484px;
+    height: 32px;
+    margin-left: 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding-left: 8px;
+    outline-color: rgba(115, 205, 225, 0.5);
+  }
+}
+
+.commentIcons {
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  display: inline-block;
+
+  div {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,139 @@
+.footer {
+  user-select: none;
+
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+
+  ~ hr {
+    margin: 0;
+    border-top: 1px solid #eeeeeea6;
+    display: inline-block;
+    width: 570px;
+    transform: translateX(-20px);
+  }
+
+  .group {
+    color: #a8996f;
+    display: flex;
+    align-items: flex-start;
+
+    .groupIcon {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      background-color: #eeeeee;
+      border-radius: 6px;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+      }
+    }
+  }
+
+  .options {
+    position: relative;
+    i {
+      color: #eeeeee;
+      margin-right: 5px;
+      margin-left: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    :nth-child(5) {
+      color: #a8996f;
+      margin-left: 24px;
+
+      &:hover {
+        color: #c3a85b;
+
+        &:active {
+          transform: scale(1.5);
+          color: black;
+        }
+      }
+    }
+
+    :nth-child(1) {
+      position: absolute;
+      top: 2px;
+      left: -50px;
+
+      &:hover {
+        color: #e27272;
+
+        &:active {
+          transform: scale(1.5);
+          color: red;
+        }
+      }
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    :nth-child(2) {
+      position: absolute;
+      top: 2px;
+      left: -18px;
+    }
+
+    :nth-child(3) {
+      &:hover {
+        color: #a8996f;
+
+        &:active {
+          transform: scale(1.5);
+          color: #c3a85b;
+        }
+      }
+    }
+  }
+}
+
+.popover {
+  color: #616161;
+
+  i {
+    font-size: 15px;
+  }
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 143px;
+
+    &:nth-child(2) {
+      border-bottom: 1px solid #a8a8a862;
+      border-top: 1px solid #a8a8a862;
+    }
+
+    &:hover {
+      color: #96459a;
+
+      span {
+        left: 16px;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 12px;
+      font-weight: 600;
+      margin-left: 15px;
+      transition: 0.3s;
+    }
+  }
+}

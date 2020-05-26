@@ -1,0 +1,47 @@
+.header {
+  position: relative;
+  height: 40px;
+
+  h3 {
+    position: absolute;
+    top: 0;
+    left: 46px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  p {
+    position: absolute;
+    line-height: 1;
+    margin: 0;
+    bottom: 0;
+    left: 46px;
+    font-weight: 400;
+    color: #707070;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.agreement {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: #eeeeee;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
