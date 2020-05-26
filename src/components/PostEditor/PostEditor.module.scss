@@ -74,3 +74,13 @@
   margin-top: 8px;
   border-radius: 6px;
 }
+
+.counter {
+  position: absolute;
+  right: 40px;
+  top: 175px;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
