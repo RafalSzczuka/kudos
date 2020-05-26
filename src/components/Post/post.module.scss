@@ -16,11 +16,6 @@
     position: relative;
     height: 40px;
 
-    img {
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-    }
     h3 {
       position: absolute;
       top: 0;
@@ -188,9 +183,34 @@
   }
 }
 
-.addComment {
-  margin-top: 15px;
+.agreement {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: #eeeeee;
+
   img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.addComment {
+  position: relative;
+  margin-top: 15px;
+  .commentAvatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -203,5 +223,18 @@
     border-radius: 6px;
     padding-left: 8px;
     outline-color: rgba(115, 205, 225, 0.5);
+  }
+}
+
+.commentIcons {
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  display: inline-block;
+
+  div {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
   }
 }

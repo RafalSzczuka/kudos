@@ -12,21 +12,14 @@
     background-color: #eeeeee;
     border: 1px solid #a8996f;
 
-    img {
+    .avatar {
       border-color: #96459a5e;
     }
-  }
-
-  img {
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    left: 16px;
-    height: 44px;
-    width: 44px;
-    transform: translateY(-50%);
-    border: 2px solid transparent;
-    transition: 0.3s;
+    .agreement {
+      img {
+        width: 24px;
+      }
+    }
   }
 
   p {
@@ -36,5 +29,36 @@
     transform: translateY(-50%);
     color: #707070;
     font-weight: 400;
+  }
+}
+
+.avatar {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 16px;
+  height: 44px;
+  width: 44px;
+  transform: translateY(-50%);
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.agreement {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 19px;
+  height: 19px;
+
+  img {
+    position: absolute;
+    width: 19px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
   }
 }

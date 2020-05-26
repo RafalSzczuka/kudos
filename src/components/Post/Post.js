@@ -4,6 +4,9 @@ import Moment from "react-moment";
 import ReactTooltip from "react-tooltip";
 import "moment/locale/pl";
 import users from "../../database/users";
+import agreement from "../../assets/agreement.svg";
+import gif from "../../assets/gif.svg";
+import attachment from "../../assets/attachment.svg";
 
 const activeUser = users.filter((user) => user.active)[0];
 
@@ -28,8 +31,12 @@ const Post = ({
   return (
     <div className={postStyle.post}>
       <div className={postStyle.header}>
-        <img src={img} alt={user}></img>
+        <img className={postStyle.avatar} src={img} alt={user}></img>
         <h3>{user}</h3>
+        <div className={postStyle.agreement}>
+          <img src={agreement} alt="agreement" />
+        </div>
+
         <p>
           <Moment locale="pl" fromNow>
             {timestamp}
@@ -80,8 +87,23 @@ const Post = ({
       </div>
       <hr />
       <div className={postStyle.addComment}>
-        <img src={activeUser.avatar} alt={activeUser.display} />
+        <img
+          className={postStyle.commentAvatar}
+          src={activeUser.avatar}
+          alt={activeUser.display}
+        />
         <input type="text" placeholder="Napisz komentarz..." />
+        <div className={postStyle.commentIcons}>
+          <div>
+            <img src={gif} alt="gif icon" />
+          </div>
+          <div>
+            <i className="far fa-smile"></i>
+          </div>
+          <div>
+            <img src={attachment} alt="gif icon" />
+          </div>
+        </div>
       </div>
     </div>
   );
