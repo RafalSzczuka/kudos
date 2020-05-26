@@ -11,7 +11,7 @@ import "./styles/all.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <AnimatePresence exitBeforeEnter>
         <Switch>
           <Route exact path="/" component={HomePage} />
