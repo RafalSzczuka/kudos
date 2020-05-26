@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PostEditorStyle from "./PostEditor.module.scss";
 import KudosList from "../KudosList/KudosList";
 import PublishBtn from "../PublishBtn/PublishBtn";
-import hands from "../../assets/hands.svg";
-import close from "../../assets/close.svg";
 import users from "../../database/users";
-
 import TextArea from "./MentionInputs/TextArea/TextArea";
 import LineInput from "./MentionInputs/LineInput/LineInput";
 import SelectGroup from "./SelectGroup/SelectGroup";

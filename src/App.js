@@ -7,6 +7,8 @@ import HomePage from "./Pages/HomePage/HomePage";
 import PostEditorPage from "./Pages/PostEditorPage/PostEditorPage";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 
+import "./styles/all.css";
+
 function App() {
   return (
     <Router>
