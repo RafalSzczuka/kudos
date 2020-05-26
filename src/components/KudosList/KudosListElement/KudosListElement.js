@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 
 const KudosListElement = ({ id, onChange, value, img, style }) => {
   return (
@@ -11,7 +12,7 @@ const KudosListElement = ({ id, onChange, value, img, style }) => {
         value={value}
         data-img={img}
       />
-      <label htmlFor={id}>
+      <label htmlFor={id} data-tip="Wybierz wzorzec" data-place="right">
         <div className={style.kudosListText}>
           <p>{value}</p>
           <p>Imię i nazwisko</p>
@@ -19,6 +20,7 @@ const KudosListElement = ({ id, onChange, value, img, style }) => {
         <div className={style.kudosListImg}>
           <img src={img} alt={value} />
         </div>
+        <ReactTooltip effect="solid" type="info" />
       </label>
     </>
   );

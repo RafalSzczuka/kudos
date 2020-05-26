@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import postStyle from "./post.module.scss";
 import Moment from "react-moment";
+import ReactTooltip from "react-tooltip";
 import "moment/locale/pl";
 import users from "../../database/users";
 
@@ -56,12 +57,26 @@ const Post = ({
           <span>{group}</span>
         </div>
         <div className={postStyle.options}>
-          <i className="fas fa-heart" onClick={() => setCounter(++counter)}></i>
+          <i
+            className="fas fa-heart"
+            onClick={() => setCounter(++counter)}
+            data-tip="Lubię to!"
+            data-place="left"
+          ></i>
           <span>{(likes += counter)}</span>
-          <i className="fas fa-comment-alt"></i>
+          <i
+            className="fas fa-comment-alt"
+            data-tip="Dodaj komentarz"
+            data-place="top"
+          ></i>
           <span>0</span>
-          <i className="fas fa-ellipsis-v"></i>
+          <i
+            className="fas fa-ellipsis-v"
+            data-tip="Opcje"
+            data-place="right"
+          ></i>
         </div>
+        <ReactTooltip effect="solid" type="info" />
       </div>
       <hr />
       <div className={postStyle.addComment}>
