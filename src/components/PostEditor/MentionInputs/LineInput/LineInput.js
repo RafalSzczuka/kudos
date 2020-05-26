@@ -10,7 +10,7 @@ const LineInput = ({ mention, mentionChange }) => {
       <MentionsInput
         value={mention}
         onChange={mentionChange}
-        maxLength={60}
+        maxLength={35}
         style={mentionStyle}
         placeholder="Wpisz imię i nazwisko lub wybierz '@' osobę ..."
         singleLine={true}
@@ -21,8 +21,8 @@ const LineInput = ({ mention, mentionChange }) => {
           style={{
             backgroundColor: "#daf4fa",
           }}
-          displayTransform={(id, display) => ` ${display}`}
-          markup="__display__ "
+          displayTransform={(id, display) => `@${display}`}
+          markup="[__display__]"
         />
       </MentionsInput>
     </label>
