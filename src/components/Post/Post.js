@@ -95,13 +95,23 @@ const Post = ({
         <input type="text" placeholder="Napisz komentarz..." />
         <div className={postStyle.commentIcons}>
           <div>
-            <img src={gif} alt="gif icon" />
+            <img
+              src={gif}
+              alt="gif icon"
+              data-tip="Dodaj gif"
+              data-place="left"
+            />
           </div>
           <div>
-            <i className="far fa-smile"></i>
+            <i className="far fa-smile" data-tip="Emoji" data-place="top"></i>
           </div>
           <div>
-            <img src={attachment} alt="gif icon" />
+            <img
+              src={attachment}
+              alt="gif icon"
+              data-tip="Dodaj załącznik"
+              data-place="right"
+            />
           </div>
         </div>
       </div>
