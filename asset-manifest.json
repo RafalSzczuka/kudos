@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kudos/static/css/main.a4d5d0b3.chunk.css",
-    "main.js": "/kudos/static/js/main.5688f125.chunk.js",
-    "main.js.map": "/kudos/static/js/main.5688f125.chunk.js.map",
+    "main.js": "/kudos/static/js/main.b6cdcb51.chunk.js",
+    "main.js.map": "/kudos/static/js/main.b6cdcb51.chunk.js.map",
     "runtime-main.js": "/kudos/static/js/runtime-main.217eacac.js",
     "runtime-main.js.map": "/kudos/static/js/runtime-main.217eacac.js.map",
     "static/js/2.d531e9bb.chunk.js": "/kudos/static/js/2.d531e9bb.chunk.js",
     "static/js/2.d531e9bb.chunk.js.map": "/kudos/static/js/2.d531e9bb.chunk.js.map",
     "index.html": "/kudos/index.html",
-    "precache-manifest.4a07ce446c46347335b9d7b55f6d70d6.js": "/kudos/precache-manifest.4a07ce446c46347335b9d7b55f6d70d6.js",
+    "precache-manifest.f3c75e5018268a46827786ed629784f2.js": "/kudos/precache-manifest.f3c75e5018268a46827786ed629784f2.js",
     "service-worker.js": "/kudos/service-worker.js",
     "static/css/main.a4d5d0b3.chunk.css.map": "/kudos/static/css/main.a4d5d0b3.chunk.css.map",
     "static/js/2.d531e9bb.chunk.js.LICENSE.txt": "/kudos/static/js/2.d531e9bb.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.217eacac.js",
     "static/js/2.d531e9bb.chunk.js",
     "static/css/main.a4d5d0b3.chunk.css",
-    "static/js/main.5688f125.chunk.js"
+    "static/js/main.b6cdcb51.chunk.js"
   ]
 }
