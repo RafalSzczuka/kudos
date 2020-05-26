@@ -1,3 +1,5 @@
+import { images } from "../database/images";
+
 var initialialPosts = [
   {
     user: "Norbert Janowski",
@@ -6,7 +8,7 @@ var initialialPosts = [
     txt:
       "Wielkie dzięki <span>@Barbara Klimowicz</span> za współpracę przy ostatnim projekcie. Dzięki twojej pomocy poradziłam sobie z badaniami i analizą! Mam nadzieję że jeszcze wiele takich projektów przed nami.",
     kudos: "Świetny współpracownik",
-    kudosImg: "/static/media/coworker.a4476b0c.svg",
+    kudosImg: images.coworker,
     mention: "Barbara Klimowicz",
     group: "Marketing",
     groupIco: "fas fa-search-dollar",
@@ -19,7 +21,7 @@ var initialialPosts = [
     txt:
       "Super się pracowało z <span>@Norbert Janowski</span> przy ostatnim mega dużym projekcie. Wiele się nauczyłem, a głównie to Twoja zasługa :) Mam nadzieję że jeszcze wspólnie będziemy pracować.",
     kudos: "Pozytywny wpływ",
-    kudosImg: "/static/media/positive.de9ee772.svg",
+    kudosImg: images.positive,
     mention: "Norbert Janowski",
     group: "Białystok",
     groupIco: "fas fa-city",
