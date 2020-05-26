@@ -15,7 +15,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/edit" component={PostEditorPage} />
+          <Route exact path="/edit" component={PostEditorPage} />
           <Route component={ErrorPage} />
         </Switch>
       </AnimatePresence>
