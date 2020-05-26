@@ -10,6 +10,7 @@ import users from "../../database/users";
 import TextArea from "./MentionInputs/TextArea/TextArea";
 import LineInput from "./MentionInputs/LineInput/LineInput";
 import SelectGroup from "./SelectGroup/SelectGroup";
+import Header from "./Header/Header";
 
 const activeUser = users.filter((user) => user.active)[0];
 
@@ -112,13 +113,7 @@ class PostEditor extends Component {
   render() {
     return (
       <div className={PostEditorStyle.container}>
-        <div className={PostEditorStyle.header}>
-          <img className={PostEditorStyle.icon} src={hands} alt="Kudos icon" />
-          <Link className={PostEditorStyle.close} to="/">
-            <img src={close} alt="close" />
-          </Link>
-          <h2>utwórz kudos</h2>
-        </div>
+        <Header />
         <form noValidate>
           <TextArea post={this.state.post} postChange={this.handlePostChange} />
           <span className={PostEditorStyle.counter}>

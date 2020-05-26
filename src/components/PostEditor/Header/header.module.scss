@@ -1,0 +1,51 @@
+.header {
+  position: relative;
+  height: 24px;
+  margin-bottom: 22px;
+  width: 100%;
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .icon {
+    left: 0;
+    width: 18px;
+  }
+  .close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #eeeeee;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #dddddd;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+}
