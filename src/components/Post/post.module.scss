@@ -238,3 +238,42 @@
     cursor: pointer;
   }
 }
+
+.popover {
+  color: #616161;
+
+  i {
+    font-size: 15px;
+  }
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 143px;
+
+    &:nth-child(2) {
+      border-bottom: 1px solid #a8a8a862;
+      border-top: 1px solid #a8a8a862;
+    }
+
+    &:hover {
+      color: #96459a;
+
+      span {
+        left: 16px;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 12px;
+      font-weight: 600;
+      margin-left: 15px;
+      transition: 0.3s;
+    }
+  }
+}

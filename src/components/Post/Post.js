@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import postStyle from "./post.module.scss";
 import Moment from "react-moment";
+import { OverlayTrigger, Popover } from "react-bootstrap";
 import ReactTooltip from "react-tooltip";
 import "moment/locale/pl";
 import users from "../../database/users";
@@ -77,11 +78,35 @@ const Post = ({
             data-place="top"
           ></i>
           <span>0</span>
-          <i
-            className="fas fa-ellipsis-v"
-            data-tip="Opcje"
-            data-place="right"
-          ></i>
+          <OverlayTrigger
+            rootClose={true}
+            trigger="click"
+            placement="bottom"
+            overlay={
+              <Popover id="popover-positioned-bottom">
+                <Popover.Content className={postStyle.popover}>
+                  <div>
+                    <i className="fas fa-edit"></i>
+                    <span>Edytuj</span>
+                  </div>
+                  <div>
+                    <i className="fas fa-share-alt"></i>
+                    <span>Udostępnij</span>
+                  </div>
+                  <div>
+                    <i className="fab fa-font-awesome-flag"></i>
+                    <span>Zgłoś nadużycie</span>
+                  </div>
+                </Popover.Content>
+              </Popover>
+            }
+          >
+            <i
+              className="fas fa-ellipsis-v"
+              data-tip="Opcje"
+              data-place="right"
+            ></i>
+          </OverlayTrigger>
         </div>
         <ReactTooltip effect="solid" type="info" />
       </div>
