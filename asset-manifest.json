@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/kudos/static/css/main.a4d5d0b3.chunk.css",
+    "main.js": "/kudos/static/js/main.b1015ff1.chunk.js",
+    "main.js.map": "/kudos/static/js/main.b1015ff1.chunk.js.map",
+    "runtime-main.js": "/kudos/static/js/runtime-main.217eacac.js",
+    "runtime-main.js.map": "/kudos/static/js/runtime-main.217eacac.js.map",
+    "static/js/2.d531e9bb.chunk.js": "/kudos/static/js/2.d531e9bb.chunk.js",
+    "static/js/2.d531e9bb.chunk.js.map": "/kudos/static/js/2.d531e9bb.chunk.js.map",
+    "index.html": "/kudos/index.html",
+    "precache-manifest.2c749a95baa827e01452c28ec17d09a7.js": "/kudos/precache-manifest.2c749a95baa827e01452c28ec17d09a7.js",
+    "service-worker.js": "/kudos/service-worker.js",
+    "static/css/main.a4d5d0b3.chunk.css.map": "/kudos/static/css/main.a4d5d0b3.chunk.css.map",
+    "static/js/2.d531e9bb.chunk.js.LICENSE.txt": "/kudos/static/js/2.d531e9bb.chunk.js.LICENSE.txt",
+    "static/media/close.svg": "/kudos/static/media/close.18722765.svg",
+    "static/media/congrats.svg": "/kudos/static/media/congrats.54a31154.svg",
+    "static/media/coworker.svg": "/kudos/static/media/coworker.a4476b0c.svg",
+    "static/media/all.css": "/kudos/static/media/fa-solid-900.cdfec5cf.woff",
+    "static/media/hands.svg": "/kudos/static/media/hands.c119efe0.svg",
+    "static/media/outboundaries.svg": "/kudos/static/media/outboundaries.c8feb702.svg",
+    "static/media/positive.svg": "/kudos/static/media/positive.de9ee772.svg",
+    "static/media/teamplay.svg": "/kudos/static/media/teamplay.5b7a641b.svg",
+    "static/media/thanks.svg": "/kudos/static/media/thanks.da5217bd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.217eacac.js",
+    "static/js/2.d531e9bb.chunk.js",
+    "static/css/main.a4d5d0b3.chunk.css",
+    "static/js/main.b1015ff1.chunk.js"
+  ]
+}
