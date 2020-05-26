@@ -27,7 +27,8 @@ Libraries and tools used:
 - node-sass (stylesheets, module.scss's),
 - react-mentions (mention autocomplete hints in post editor inputs),
 - react-select (select-option dropdown with icons),
-- react-tooltip (tooltips hints)
-- gh-pages (deploy to github static page server)
+- react-tooltip (tooltips hints),
+- gh-pages (deploy to github static page server),
+- fontawesome library (icons)
 
 App was tested on Chrome and Firefox browsers.
