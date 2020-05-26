@@ -23,6 +23,7 @@ class PostEditor extends Component {
       kudosTitle: "",
       kudosImg: "",
       group: "",
+      groupIco: "",
       likes: 0,
 
       parsedPost: "",
@@ -46,6 +47,7 @@ class PostEditor extends Component {
       kudosImg: this.state.kudosImg,
       mention: this.mentionParser(this.state.mention, "[", "]"),
       group: this.state.group,
+      groupIco: this.state.groupIco,
       likes: this.state.likes,
     };
 
@@ -88,8 +90,10 @@ class PostEditor extends Component {
   };
 
   handleGroupChange = (e) => {
+    console.log(e);
     this.setState({
-      group: e.target.value,
+      group: e.value,
+      groupIco: e.label.props.children[0].props.className,
     });
   };
 

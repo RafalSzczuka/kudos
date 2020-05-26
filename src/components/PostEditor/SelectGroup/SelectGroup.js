@@ -1,20 +1,47 @@
 import React from "react";
 import selectGroupStyle from "./selectGroup.module.scss";
+import Select from "react-select";
+
+const options = [
+  {
+    value: "Białystok",
+    label: (
+      <div>
+        <i className="fas fa-city"></i>
+        <span>Białystok</span>
+      </div>
+    ),
+  },
+  {
+    value: "Marketing",
+    label: (
+      <div>
+        <i className="fas fa-search-dollar"></i>
+        <span>Marketing</span>
+      </div>
+    ),
+  },
+  {
+    value: "Backend",
+    label: (
+      <div>
+        <i className="fas fa-server"></i>
+        <span>Backend</span>
+      </div>
+    ),
+  },
+];
 
 const SelectGroup = ({ onChange }) => {
   return (
-    <label htmlFor="group" className={selectGroupStyle.group}>
+    <label htmlFor="group">
       Wybierz grupę
-      <select
+      <Select
         className={selectGroupStyle.customSelect}
-        name="group"
+        placeholder=""
+        options={options}
         onChange={onChange}
-      >
-        <option value="">wybierz grupę</option>
-        <option value="Białystok">Białystok</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Backend">Backend</option>
-      </select>
+      />
     </label>
   );
 };

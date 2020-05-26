@@ -1,11 +1,17 @@
-.group {
-  display: flex;
-  flex-direction: column;
-}
-
 .customSelect {
+  font-weight: 400;
   width: 183px;
   height: 32px;
   margin-top: 8px;
   border-radius: 6px;
+
+  i {
+    display: inline-block;
+    width: 18px;
+    font-size: 18px;
+    color: #78107e;
+  }
+  span {
+    margin-left: 10px;
+  }
 }

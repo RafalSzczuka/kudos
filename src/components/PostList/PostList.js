@@ -28,6 +28,7 @@ class PostList extends Component {
         kudosImg={post.kudosImg}
         mention={post.mention}
         group={post.group}
+        groupIco={post.groupIco}
         likes={post.likes}
         key={index}
       />

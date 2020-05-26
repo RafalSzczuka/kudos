@@ -17,9 +17,9 @@ const Post = ({
   txt,
   kudos,
   kudosImg,
-  kudosTxt,
   mention,
   group,
+  groupIco,
   likes,
 }) => {
   let [counter, setCounter] = useState(0);
@@ -51,7 +51,7 @@ const Post = ({
       <div className={postStyle.footer}>
         <div className={postStyle.group}>
           <div className={postStyle.groupIcon}>
-            <i className="fas fa-city"></i>
+            <i className={groupIco}></i>
           </div>
           <span>{group}</span>
         </div>

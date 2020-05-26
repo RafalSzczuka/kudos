@@ -9,6 +9,7 @@ var initialialPosts = [
     kudosImg: "/static/media/coworker.a4476b0c.svg",
     mention: "Barbara Klimowicz",
     group: "Marketing",
+    groupIco: "fas fa-search-dollar",
     likes: 4,
   },
   {
@@ -21,6 +22,7 @@ var initialialPosts = [
     kudosImg: "/static/media/positive.de9ee772.svg",
     mention: "Norbert Janowski",
     group: "Białystok",
+    groupIco: "fas fa-city",
     likes: 2,
   },
 ];
