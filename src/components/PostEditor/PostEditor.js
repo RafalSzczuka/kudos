@@ -45,7 +45,7 @@ class PostEditor extends Component {
       txt: this.state.post,
       kudos: this.state.kudosTitle,
       kudosImg: this.state.kudosImg,
-      mention: this.state.mention,
+      mention: this.mentionParser(this.state.mention, "[", "]"),
       group: this.state.group,
       likes: this.state.likes,
     };
@@ -53,6 +53,20 @@ class PostEditor extends Component {
     let storagePosts = JSON.parse(localStorage.getItem("posts"));
     storagePosts.unshift(newPost);
     localStorage.setItem("posts", JSON.stringify(storagePosts));
+  };
+
+  mentionParser = (data, ...args) => {
+    let result;
+    result = data.split("");
+
+    for (let i in result) {
+      for (let j in args) {
+        if (result[i] === args[j]) {
+          result.splice(i, 1);
+        }
+      }
+    }
+    return result.join("");
   };
 
   handleRadioChange = (e) => {
