@@ -1,5 +1,8 @@
 import { images } from "../database/images";
 
+// here you can coustomize your kudos card (avaliable at kudos editor page, "Wybierz kudos").
+// You only need to add another element in data array below. All properties are required.
+
 const data = [
   {
     id: "thanks",

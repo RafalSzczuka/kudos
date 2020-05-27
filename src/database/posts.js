@@ -1,5 +1,9 @@
 import { images } from "../database/images";
 
+// it's initial posts database. They're pushed to browser localstorage, and newly added posts are looped in >read localstorage >save localstorage.
+// If you want to restart app to initial state with posts below, just clear browser localstorage.
+// All properties in post are required.
+
 var initialialPosts = [
   {
     user: "Norbert Janowski",

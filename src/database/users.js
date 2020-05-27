@@ -1,3 +1,5 @@
+// users database. You can switch active user (visible at comments avatar, and name at newly added post) by changing "active" flag
+
 const users = [
   {
     id: 1,

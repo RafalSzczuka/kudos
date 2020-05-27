@@ -2,6 +2,7 @@ import React from "react";
 import selectGroupStyle from "./selectGroup.module.scss";
 import Select from "react-select";
 
+// select-options properties. You can easily add more options (value and label properties are required)
 const options = [
   {
     value: "Białystok",

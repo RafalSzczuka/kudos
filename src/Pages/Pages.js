@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
 import HomePage from "./HomePage/HomePage";
 import PostEditorPage from "./PostEditorPage/PostEditorPage";
 import ErrorPage from "./ErrorPage/ErrorPage";

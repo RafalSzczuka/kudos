@@ -4,6 +4,8 @@ import initialialPosts from "../../database/posts";
 
 let posts;
 
+// posts feed are updated in every post list render cycle
+
 class PostList extends Component {
   updateFeed = () => {
     if (!localStorage.getItem("posts")) {

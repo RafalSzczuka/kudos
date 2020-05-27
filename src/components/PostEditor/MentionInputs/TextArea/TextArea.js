@@ -3,6 +3,7 @@ import { MentionsInput, Mention } from "react-mentions";
 import mentionStyle from "../mentionStyle";
 import users from "../../../../database/users";
 
+// simple emoijs api added, it works, but emoij display tooltip needs better styling
 const queryEmojis = async (query, callback) => {
   const url = new URL("https://emoji.getdango.com/api/emoji");
   url.searchParams.append("q", query);

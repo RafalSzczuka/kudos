@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
 import PostEditorStyle from "./PostEditor.module.scss";
 import KudosList from "../KudosList/KudosList";
 import PublishBtn from "../PublishBtn/PublishBtn";
@@ -28,11 +27,9 @@ class PostEditor extends Component {
       group: "",
       groupIco: "",
       likes: 0,
-
       parsedPost: "",
 
       valid: false,
-
       errors: {
         post: false,
         mention: false,
@@ -41,6 +38,7 @@ class PostEditor extends Component {
       },
     };
   }
+
   errorMessages = {
     errorPost: "Wpisz co najmniej 10 znaków",
     errorMention: "Wpisz co najmniej 10 znaków",
@@ -76,6 +74,8 @@ class PostEditor extends Component {
     return { post, mention, kudos, group, correct };
   };
 
+  // submit button simulates loading new post (in fact it's instantly). It can be changed by removing setTimeout.
+  // after validation returns true, app switches to homepage with posts feed, so state in post editor clears by itself.
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -116,6 +116,9 @@ class PostEditor extends Component {
     localStorage.setItem("posts", JSON.stringify(storagePosts));
   };
 
+  // Mentions have their own markup (default or custom, they're required).
+  // To provide clear mention, without decorators such as "[" or "]" raw string needs to be parsed.
+  // Function below can parse string by any special character provided as ...args argument.
   mentionParser = (data, ...args) => {
     let result;
     result = data.split("");
@@ -130,6 +133,9 @@ class PostEditor extends Component {
     return result.join("");
   };
 
+  // Same as below - markup needs to be erased due to characters counter in post editor.
+  // This custom mention markup wraps mention by <span> tag (to easily style them).
+  // But to proper characters coutn, they need to be eradicated.
   spanParser = (data) => {
     let first = data.split("</span>");
     first = first.join("");
@@ -140,6 +146,8 @@ class PostEditor extends Component {
     return string;
   };
 
+  // Handlers are atomized to every input due to error state checking.
+  // To interactive check if input value are not longer false, it checks after every target value change, and updates error state.
   handleRadioChange = (e) => {
     let img = e.target.attributes.getNamedItem("data-img").value;
 

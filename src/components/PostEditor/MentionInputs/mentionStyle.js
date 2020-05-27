@@ -29,7 +29,6 @@ export default {
 
     highlighter: {
       padding: 9,
-      // border: "2px inset transparent",
     },
 
     input: {

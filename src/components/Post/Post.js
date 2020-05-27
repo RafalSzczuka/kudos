@@ -1,7 +1,6 @@
 import React from "react";
 import postStyle from "./post.module.scss";
 import ReactTooltip from "react-tooltip";
-
 import PostHeader from "./PostHeader/PostHeader";
 import PostBody from "./PostBody/PostBody";
 import PostFooter from "./PostFooter/PostFooter";
