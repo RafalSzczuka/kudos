@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -10,16 +10,16 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import "./styles/all.css";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <AnimatePresence exitBeforeEnter>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/edit" component={PostEditorPage} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </AnimatePresence>
-    </Router>
+    <AnimatePresence exitBeforeEnter>
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/edit" component={PostEditorPage} />
+        <Route component={ErrorPage} />
+      </Switch>
+    </AnimatePresence>
   );
 }
 
